@@ -21,12 +21,13 @@ func New(cfg *config.Config, t *tools.Tools) *Service {
 	}
 }
 
+// Listen fica olhando as rotas para quando for realizada uma chamada
 func (s *Service) Listen() {
 	router := chi.NewRouter()
 
 	router.Get("/", routerDefault)
 
-	router.Post("/verify", s.Verify)
+	router.Post("/verify", s.t.Middleware(s.Verify))
 
 	log.Fatal(http.ListenAndServe(":"+s.cfg.PortService, router))
 }

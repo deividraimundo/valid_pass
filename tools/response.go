@@ -5,6 +5,7 @@ import (
 	"net/http"
 )
 
+// Response monta uma resposta de devolução a chamada à API
 func (t *Tools) Response(w http.ResponseWriter, status int, body interface{}) {
 
 	w.Header().Set("Content-Type", "application/json")

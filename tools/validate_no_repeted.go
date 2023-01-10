@@ -1,5 +1,6 @@
 package tools
 
+// ValidateNoRepeted valida se duas letras não repetem em sequencia.
 func (t *Tools) ValidateNoRepeted(pass []string) bool {
 
 	var letter string

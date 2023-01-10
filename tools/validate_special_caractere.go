@@ -21,6 +21,7 @@ var specials = map[string]bool{
 	"]": true,
 }
 
+// ValidateSpecialCaractere valida caracteres especiais passados no map specials.
 func (t *Tools) ValidateSpecialCaractere(pass []string, minSpecialChars int) bool {
 
 	sum := 0

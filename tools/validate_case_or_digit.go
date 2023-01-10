@@ -2,7 +2,8 @@ package tools
 
 import "regexp"
 
-func (t *Tools) ValidateMinCaseOrDigit(pass []string, minUppercase int, compile string) bool {
+// ValidateForRegex valida se o número mínimo tanto de caractere quanto de digítos estão dentro do minimo exigido.
+func (t *Tools) ValidateForRegex(pass []string, min int, compile string) bool {
 
 	sum := 0
 
@@ -14,5 +15,5 @@ func (t *Tools) ValidateMinCaseOrDigit(pass []string, minUppercase int, compile 
 		}
 	}
 
-	return sum >= minUppercase
+	return sum >= min
 }
