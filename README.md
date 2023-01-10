@@ -4,7 +4,8 @@
 
 ### Passo a passo
 
-1 - Inicie o programa. Após iniciado o programa estará escutando em http://localhost:8080
+1 - Inicie o programa com o comando `docker compose up`.Após iniciado o programa estará escutando em `http://localhost/PORT_SERVICE`.
+OBS: `PORT_SERVICE` deverá conter a porta do serviço que você definiu no docker-compose.yml.
 
 2 - Método `POST`.
 
@@ -16,8 +17,11 @@
 
 | Atributo      | Valor              | Obrigatório |
 | :------------ | :----------------- | :---------: |
-| Authorization | `valid_pass`       |     \*      |
+| Authorization | Bearer token       |     \*      |
 | Content-type  | `application/json` |     \*      |
+
+Para fins didáticos o Bearer token será o seguinte:  
+`Bearer 3406b8d48918e96a912111467f070e4be22ea2402a1633e14d3ae4febf47598b`
 
 #### Body
 
