@@ -16,7 +16,7 @@ func main() {
 	// cfg guarda as configurações que serão passadas por todo o código
 	cfg := config.New()
 
-	log.Println("Valid Pass - 1.0")
+	log.Println("Valid Pass - v0.0.1")
 
 	// tools guarda ferramentas/funções
 	tools := tools.New(cfg)
