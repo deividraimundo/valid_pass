@@ -4,12 +4,11 @@
 
 ### Passo a passo
 
-1 - Inicie o programa com o comando `docker compose up`.Após iniciado o programa estará escutando em `http://localhost/PORT_SERVICE`.
-OBS: `PORT_SERVICE` deverá conter a porta do serviço que você definiu no docker-compose.yml. Em desenvolvimento o PORT_SERVICE tem valor 8080.
+1 - Clone o repositório e inicie o programa com o comando `./install`.Após iniciado o programa estará escutando em `http://localhost/8080`.
 
 2 - Método `POST`.
 
-3 - Rota `verify`.
+3 - Rota `/verify`.
 
 4 - Monte a requisição. Nela deve conter um header e um body:
 

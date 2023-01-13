@@ -1,0 +1,30 @@
+#!/bin/bash
+export APP_VERSION=$(git describe --tags `git rev-list --tags --max-count=1`)
+
+echo --- [Parando container] ---
+docker stop valid_pass_api
+
+echo --- [Excluindo container] ---
+docker rm valid_pass_api -f
+
+echo --- [Apagando imagem atual] ---
+docker rmi deividraimundo/valid_pass_api:$APP_VERSION -f
+
+echo --- [Fazendo build da imagem] ---
+docker build -t deividraimundo/valid_pass_api:$APP_VERSION .
+
+echo --- [Instalando valid_pass] ---
+docker run -d --name=valid_pass_api \
+-e TZ=America/Sao_Paulo \
+-p 8080:8080 \
+--restart=always deividraimundo/valid_pass_api:$APP_VERSION
+
+if [ $? -ne 0 ]; then
+
+  echo --- [Erro ao instalar imagem docker valid_pass_api] ---
+  exit 1
+
+fi
+
+echo --- [valid_pass_api instalado com sucesso!!!] ---
+exit
